@@ -1,25 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace ClassLibrary.Core.Models;
 
-namespace ClassLibrary.Core.Models
+public class Car
 {
-    public class car
+    public string Name { get; set; }
+    public string Model { get; set; }
+    public string Type { get; set; }
+    public string Color { get; set; }
+
+    public Car(string name, string model, string type, string color)
     {
-        public string Carname { get; set; }
-        public string Carmodel { get; set; }
-        public string Cartype { get; set; }
-        public string Carcolor { get; set; }
-
-        public car(string carname, string carmodel, string cartype, string carcolor)
-        {
-            Carname = carname;
-            Carmodel = carmodel;
-            Cartype = cartype;
-            Carcolor = carcolor;
-        }
+        Name = name;
+        Model = model;
+        Type = type;
+        Color = color;
     }
-
 }
