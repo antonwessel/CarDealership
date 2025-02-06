@@ -1,3 +1,4 @@
+using ClassLibrary.Core.Helpers;
 using ClassLibrary.Core.Models;
 using ClassLibrary.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -40,6 +41,7 @@ public class LoginWebsite : PageModel
         }
         else
         {
+            UserState.CurrentUser = UserLoggedIn;
             return RedirectToPage("Index");
         }
     }
