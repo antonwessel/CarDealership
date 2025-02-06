@@ -11,6 +11,11 @@ public class User
         Password = password;
     }
 
+    public User()
+    {
+        
+    }
+
 
 
 }

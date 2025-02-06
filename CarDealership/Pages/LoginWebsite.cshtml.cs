@@ -1,46 +1,48 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using ClassLibrary.Core.Models;
+using ClassLibrary.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
 
-namespace CarDealership.Pages
+namespace CarDealership.Pages;
+
+public class LoginWebsite : PageModel
 {
-    public class LoginWebsite : PageModel
+    private readonly UserService _userService;
+
+    [BindProperty]
+    public string EmailInput { get; set; }
+
+    [BindProperty]
+    public string PasswordInput { get; set; }
+
+    public List<User> Users { get; set; }
+
+    [BindProperty]
+    public User UserLoggedIn { get; set; }
+
+    public LoginWebsite(UserService userService)
     {
-        private readonly ILogger<LoginWebsite> _logger;
-        [BindProperty]
-        public string Email { get; set; }
-        [BindProperty]
-        public string Password { get; set; }
-        public bool IsLoggedIn { get; set; }
+        _userService = userService;
+    }
 
-        public LoginWebsite(ILogger<LoginWebsite> logger)
+    public void OnGet()
+    {
+    }
+
+    public IActionResult OnPost()
+    {
+        Users = _userService.GetUsers();
+        UserLoggedIn = Users.FirstOrDefault(user => user.Email == EmailInput && user.Password == PasswordInput);
+
+        if (UserLoggedIn == null)
         {
-            _logger = logger;
+            return Page();
         }
-
-        public void OnGet()
+        else
         {
-            
-        }
-
-        public void LogIn()
-        {
-            if (string.IsNullOrEmpty(Email)) throw new ArgumentNullException("Email is required");
-            if (string.IsNullOrEmpty(Password)) throw new ArgumentNullException("Password is required");
-            else
-            {
-                IsLoggedIn = true;
-            }
-        }
-
-        public IActionResult OnPost()
-        {
-            LogIn();
-            return RedirectToPage("LoginWebsite");
+            return RedirectToPage("Index");
         }
     }
+
+
 }
