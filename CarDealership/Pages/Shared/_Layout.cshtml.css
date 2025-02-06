@@ -1,48 +1,148 @@
 ﻿/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background: #f4f4f4;
+    color: #333;
 }
 
-a {
-  color: #0077cc;
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: #007bff;
+    color: white;
 }
 
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+.nav-links {
+    list-style: none;
+    display: flex;
 }
 
-.border-top {
-  border-top: 1px solid #e5e5e5;
-}
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+    .nav-links li {
+        margin: 0 15px;
+    }
+
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-size: 1rem;
+    }
+
+/* Header */
+header {
+    background: linear-gradient(to right, #007bff, #00c6ff);
+    color: white;
+    padding: 80px 20px;
 }
 
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
 }
 
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
+p {
+    font-size: 1.2rem;
 }
 
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px;
+/* CTA Button */
+.cta-button {
+    background: white;
+    color: #007bff;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+    .cta-button:hover {
+        background: #e0e0e0;
+    }
+
+/* Features */
+#features {
+    padding: 50px 10px;
+    background: white;
+}
+
+.feature-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.feature {
+    background: #f4f4f4;
+    padding: 20px;
+    margin: 10px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+/* Testimonials */
+#testimonials {
+    background: #007bff;
+    color: white;
+    padding: 50px 10px;
+}
+
+.testimonial-slider {
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    white-space: nowrap;
+    animation: slide 10s infinite linear;
+}
+
+.testimonial {
+    display: inline-block;
+    padding: 10px;
+    width: 100%;
+    font-size: 1.2rem;
+}
+
+/* Contact */
+#contact {
+    padding: 50px 10px;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Animation */
+@keyframes slide {
+    0% {
+        transform: translateX(0%);
+    }
+
+    33% {
+        transform: translateX(-100%);
+    }
+
+    66% {
+        transform: translateX(-200%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
 }
