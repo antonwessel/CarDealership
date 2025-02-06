@@ -36,12 +36,10 @@ public class LoginWebsite : PageModel
 
         if (UserLoggedIn == null)
         {
-            Console.WriteLine("Wrong login");
             return Page();
         }
         else
         {
-            Console.WriteLine($"Logged in as {UserLoggedIn.Email}");
             return RedirectToPage("Index");
         }
     }
