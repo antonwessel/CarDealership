@@ -1,6 +1,10 @@
-﻿namespace ClassLibrary.Core.Helpers;
+﻿using ClassLibrary.Core.Models;
 
-public class UserState
+namespace ClassLibrary.Core.Helpers;
+
+public static class UserState
 {
+    public static User CurrentUser;
+
 
 }
