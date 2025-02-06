@@ -2,16 +2,16 @@
 
 public class Car
 {
-    public string Name { get; set; }
-    public string Model { get; set; }
-    public string Type { get; set; }
-    public string Color { get; set; }
+    public string Carname { get; set; }
+    public string Carmodel { get; set; }
+    public string Cartype { get; set; }
+    public string Carcolor { get; set; }
 
-    public Car(string name, string model, string type, string color)
+    public Car(string carname, string carmodel, string cartype, string carcolor)
     {
-        Name = name;
-        Model = model;
-        Type = type;
-        Color = color;
+        Carname = carname;
+        Carmodel = carmodel;
+        Cartype = cartype;
+        Carcolor = carcolor;
     }
 }
