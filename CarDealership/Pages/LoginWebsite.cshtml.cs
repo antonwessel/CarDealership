@@ -9,7 +9,16 @@ public class LoginWebsite : PageModel
 {
     private readonly UserService _userService;
 
+    [BindProperty]
+    public string EmailInput { get; set; }
+
+    [BindProperty]
+    public string PasswordInput { get; set; }
+
     public List<User> Users { get; set; }
+
+    [BindProperty]
+    public User UserLoggedIn { get; set; }
 
     public LoginWebsite(UserService userService)
     {
@@ -18,6 +27,24 @@ public class LoginWebsite : PageModel
 
     public void OnGet()
     {
-        Users = _userService.GetUsers();
     }
+
+    public IActionResult OnPost()
+    {
+        Users = _userService.GetUsers();
+        UserLoggedIn = Users.FirstOrDefault(user => user.Email == EmailInput && user.Password == PasswordInput);
+
+        if (UserLoggedIn == null)
+        {
+            Console.WriteLine("Wrong login");
+            return Page();
+        }
+        else
+        {
+            Console.WriteLine($"Logged in as {UserLoggedIn.Email}");
+            return RedirectToPage("Index");
+        }
+    }
+
+
 }

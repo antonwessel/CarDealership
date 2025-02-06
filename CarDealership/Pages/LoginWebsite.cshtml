@@ -12,17 +12,18 @@
             @Html.AntiForgeryToken()
 
             <div class="mb-3">
-                <label for="username" class="form-label">Brugernavn:</label>
-                <input type="text" id="username" name="username" class="form-control" placeholder="Indtast brugernavn" required />
+                <label for="email" class="form-label">Brugernavn:</label>
+                <input type="text" id="email" asp-for="EmailInput" class="form-control" placeholder="Indtast email" required />
             </div>
 
             <div class="mb-3">
                 <label for="password" class="form-label">Adgangskode:</label>
-                <input type="password" id="password" name="password" class="form-control" placeholder="Indtast adgangskode" required />
+                <input type="password" id="password" asp-for="PasswordInput" class="form-control" placeholder="Indtast adgangskode" required />
             </div>
 
             <button type="submit" class="btn btn-primary w-100">Login</button>
         </form>
+
 
         <div class="text-center mt-3">
             <a href="#">Glemt adgangskode?</a>
