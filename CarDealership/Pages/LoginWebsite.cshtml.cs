@@ -29,8 +29,8 @@ namespace CarDealership.Pages
 
         public void LogIn()
         {
-            if (Email == null) throw new ArgumentNullException("Email is required");
-            if (Password == null) throw new ArgumentNullException("Password is required");
+            if (string.IsNullOrEmpty(Email)) throw new ArgumentNullException("Email is required");
+            if (string.IsNullOrEmpty(Password)) throw new ArgumentNullException("Password is required");
             else
             {
                 IsLoggedIn = true;
