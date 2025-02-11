@@ -1,0 +1,18 @@
+﻿@page
+@model CarDealership.Pages.GlemtAdgangskodeModel
+@{
+    ViewData["Title"] = "Glemt adgangskode";
+}
+
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card shadow-lg p-4" style="max-width: 400px; width: 100%;">
+        <h2 class="text-center mb-4">Glemt adgangskode</h2>
+        <form method="post">
+            <div class="mb-3">
+                <label for="email" class="form-label">Indtast din e-mail:</label>
+                <input type="email" id="email" asp-for="EmailInput" class="form-control" placeholder="Indtast din e-mail" required />
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Send</button>
+        </form>
+    </div>
+</div>
