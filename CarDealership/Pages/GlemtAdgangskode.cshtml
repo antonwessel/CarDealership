@@ -3,10 +3,10 @@
 @{
     ViewData["Title"] = "Glemt adgangskode";
 }
-
 <div class="container d-flex justify-content-center align-items-center vh-100">
     <div class="card shadow-lg p-4" style="max-width: 400px; width: 100%;">
         <h2 class="text-center mb-4">Glemt adgangskode</h2>
+
         <form method="post">
             <div class="mb-3">
                 <label for="email" class="form-label">Indtast din e-mail:</label>
@@ -14,5 +14,16 @@
             </div>
             <button type="submit" class="btn btn-primary w-100">Send</button>
         </form>
+
+        <!-- Vis fejlmeddelelse hvis e-mailen ikke findes -->
+        @if (!ModelState.IsValid && ModelState.ErrorCount > 0)
+        {
+            <div class="text-danger mt-3">
+                @foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
+                {
+                    <p>@error.ErrorMessage</p>
+                }
+            </div>
+        }
     </div>
 </div>
