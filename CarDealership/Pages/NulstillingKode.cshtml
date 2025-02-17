@@ -1,0 +1,21 @@
+﻿@page
+@model CarDealership.Pages.NulstillingKodeModel
+@{
+    ViewData["Title"] = "NytKodeord";
+}
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card shadow-lg p-4" style="max-width: 400px; width: 100%;">
+        <h2 class="text-center mb-4">Nulstil adgangskode</h2>
+        <form method="post">
+            <input type="hidden" asp-for="Email" />
+            <input type="hidden" asp-for="Id" />
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Ny adgangskode:</label>
+                <input type="password" id="password" asp-for="NewKode" class="form-control" placeholder="Indtast ny adgangskode" required />
+            </div>
+
+            <button type="submit" class="btn btn-success w-100">Nulstil adgangskode</button>
+        </form>
+    </div>
+</div>

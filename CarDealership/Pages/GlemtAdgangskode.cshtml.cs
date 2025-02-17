@@ -23,7 +23,7 @@ namespace CarDealership.Pages
             if (emailExists)
             {
                 // Hvis e-mailen findes, går vi videre til næste side
-                return RedirectToPage("/NytKodeord");
+                return RedirectToPage("NulstillingKode");
             }
             else
             {
